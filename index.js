@@ -23,65 +23,72 @@ function LTS(data) {
 
 
 const log = LTS
-try {
-  const client = await MongoClient.connect(process.env.MONGODB_NATIVE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
 
-nativedb = client.db(process.env.MONGODB_DB);
-  const server = new SMTPServer({
-    options: {
-      secure: false,
-      name: "lifesignals.dev",
-      banner: "LifeSignals Dev Email Server",
-      hideSize: true,
-      size: 1024 * 1024 * 2,
+async function start() {
+  try {
 
-    },
 
-    onRcptTo(address, session, callback) {
-      if (address.address.includes("@lifesignals.dev")) {
-        return callback(
-          new Error("Only lifesignals.dev is allowed to receive mail")
-        );
-      }
-      return callback(); // Accept the address
-    },
-    onData(stream, session, callback) {
-      parser(stream, {}, async (err, parsed) => {
-        if (err){
-          log("Error:", err)
-        }else{
-          var to_arr = parsed.to.text.split("@");
-          var from_arr =  parsed.from.text.split("@");
-          var data = {
-            to : to_arr[0],
-            to_full : to_arr[1],
-            from : from_arr[0],
-            from_full : from_arr[1],
-            createdAt: Date.now(),
-            ...parsed
-          }
-          var insert = await nativedb.collection("rest_email").insertOne(data);
-          log("--------------------")
-          log(JSON.stringify(parsed))
-          log("--------------------")
-          log(JSON.stringify(insert))
-          log("--------------------")
+    const client = await MongoClient.connect(process.env.MONGODB_NATIVE, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    nativedb = client.db(process.env.MONGODB_DB);
+    const server = new SMTPServer({
+      options: {
+        secure: false,
+        name: "lifesignals.dev",
+        banner: "LifeSignals Dev Email Server",
+        hideSize: true,
+        size: 1024 * 1024 * 2,
+
+      },
+
+      onRcptTo(address, session, callback) {
+        if (address.address.includes("@lifesignals.dev")) {
+          return callback(
+            new Error("Only lifesignals.dev is allowed to receive mail")
+          );
         }
+        return callback(); // Accept the address
+      },
+      onData(stream, session, callback) {
+        parser(stream, {}, async (err, parsed) => {
+          if (err) {
+            log("Error:", err)
+          } else {
+            var to_arr = parsed.to.text.split("@");
+            var from_arr = parsed.from.text.split("@");
+            var data = {
+              to: to_arr[0],
+              to_full: to_arr[1],
+              from: from_arr[0],
+              from_full: from_arr[1],
+              createdAt: Date.now(),
+              ...parsed
+            }
+            var insert = await nativedb.collection("rest_email").insertOne(data);
+            log("--------------------")
+            log(JSON.stringify(parsed))
+            log("--------------------")
+            log(JSON.stringify(insert))
+            log("--------------------")
+          }
 
-        stream.on("end", callback)
-      })
-    },
-    disabledCommands: ['AUTH']
-  });
-  server.on("error", err => {
-    log("Error %s", err.message);
-  });
-  server.listen(process.env.MAILSERVER_PORT, process.env.MAILSERVER_HOST);
-} catch (error) {
-  log("ERROR :: " + error)
+          stream.on("end", callback)
+        })
+      },
+      disabledCommands: ['AUTH']
+    });
+    server.on("error", err => {
+      log("Error %s", err.message);
+    });
+    server.listen(process.env.MAILSERVER_PORT, process.env.MAILSERVER_HOST);
+  } catch (error) {
+    log("ERROR :: " + error)
+  }
 }
+
+start();
 
 
