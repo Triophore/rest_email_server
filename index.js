@@ -22,7 +22,7 @@ function LTS(data) {
 
 
 const log = LTS
-module.exports.mailengine = async function(data){
+
     const server = new SMTPServer({
         onData(stream, session, callback) {
           parser(stream, {}, (err, parsed) => {
@@ -37,4 +37,3 @@ module.exports.mailengine = async function(data){
       });
       
   server.listen(process.env.MAILSERVER_PORT,process.env.MAILSERVER_HOST);
-}
