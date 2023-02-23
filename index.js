@@ -81,11 +81,15 @@ async function start() {
       disabledCommands: ['AUTH']
     });
     server.on("error", err => {
-      log("Error %s", err.message);
+      log("SERROR");
+      log(err.message)
+      log("SERROR")
     });
     server.listen(process.env.MAILSERVER_PORT, process.env.MAILSERVER_HOST);
   } catch (error) {
-    log("ERROR :: " + error)
+    log("ERROR")
+    log(error)
+    log("ERROR")
   }
 }
 
