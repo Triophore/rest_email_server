@@ -57,8 +57,8 @@ async function start() {
           if (err) {
             log("Error:", err)
           } else {
-            var to_arr = parsed.to.value[0].split("@");
-            var from_arr = parsed.from.value[0].split("@");
+            var to_arr = parsed.to.value[0].address.split("@");
+            var from_arr = parsed.from.value[0].address.split("@");
             var data = {
               to_name: to_arr[0],
               to_full: to_arr[1],
