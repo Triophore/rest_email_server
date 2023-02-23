@@ -1,0 +1,218 @@
+{
+    "attachments": [],
+    "headers": {},
+    "headerLines": [
+        {
+            "key": "received",
+            "line": "Received: from DM6PR03MB5308.namprd03.prod.outlook.com (2603:10b6:5:242::23)\r\n by SJ0PR03MB5855.namprd03.prod.outlook.com (2603:10b6:a03:2d4::7) with\r\n Microsoft SMTP Server (version=TLS1_2,\r\n cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6134.20; Thu, 23 Feb\r\n 2023 06:58:16 +0000"
+        },
+        {
+            "key": "arc-seal",
+            "line": "ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;\r\n b=lhTIVBn3IIs06ADv1JuQH3gL/FZ/PuPNlCH/hDv4Dgcgkf8oYx7HZQP+xpDLE49wuKisjB2GSrJiFjgN18wq67vdCLf5sjBSaO+fpBPnJlfdrkfEwIWIj/gS2MzDOXQBZg4kXS7xTGbrAwY73IqJz+ivsXdvHrrQHkubTvYokgC6utsImQ5ljoipihKKLSzzdW3ag4hsXlH3AHt6T34hze+4JRGwKS5eD5O2mikrqQ9HURcmbx2AWLcKSHV8Gt3VOS7Ylj4jX51Jb0UoFg/lnawa2DaGM3R0xO8UTRh+ukGHN2XNH/QzPitzZtOXbka6qKPMB3wevyuEl/X7X4ajpg=="
+        },
+        {
+            "key": "arc-message-signature",
+            "line": "ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;\r\n s=arcselector9901;\r\n h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;\r\n bh=tDvuT6WHP/YnKE2yrB8Dz8KK7JRpkgQWeVQM9wlUeJU=;\r\n b=h53fg6zrSTKkwS2qOIlLzsZpFkNcxB5sS1b5OeTA0FkeBGXG5vN4eZ7+S1hhegpT5wRux+zs9I512CpmeNVMh/yKXnwhDqgneeVbb0SJK1hae52bN9654J4ZdY2NzhRfKydXtVwVFc1XnMxw3hvOkvY3WnprbPKn9hQXY/qCqKphc22yQZC3Ssau3lWL45Lbe6Z0xLCM46wUClpvZ6NnuEjCJ73JZkVVs6pumcXAWMAjPKeiW63L0GhJzwVCL6DeP/zk83PE7TUluJFc1PwJF5iYPDzF5pRYN/D4dcD5ObsOT7gzkd8mZ759eqUSzd3HsvAew1ronI6BXTKGMgk04Q=="
+        },
+        {
+            "key": "arc-authentication-results",
+            "line": "ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass\r\n smtp.mailfrom=lifesignals.com; dmarc=pass action=none\r\n header.from=lifesignals.com; dkim=pass header.d=lifesignals.com; arc=none"
+        },
+        {
+            "key": "dkim-signature",
+            "line": "DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lifesignals.com;\r\n s=selector1;\r\n h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;\r\n bh=tDvuT6WHP/YnKE2yrB8Dz8KK7JRpkgQWeVQM9wlUeJU=;\r\n b=foe1d4SHN47lgx+6sYb9tGvV11qijH2Ju/FmCJRVcPxWbIKUYkCXZZKQTKrkXgdzIKHUlO8r/M1GMok6Ytz2q+Sjw/RwpFaNgN5tf7/ZbTqrXibwkAdEpXxn9QamHdgjj9rpmlh9HScgrpTOC0EnjGK7yeP2zyAsQ7DpZUWJv0QWWHIMu4kdqWn+qQyeZ5n2QMJHPy9g1eXa5K4oQm8zikLHWEypp91Lt/wcDUpJ5RiwPwPi9VyolmEKpf0qG1rkxAMMTLm2yyi+at8oYxBNgnLdfWdjpPGo8Ledxwb5ZnHf06PRsVWBJ2DoATfThEupb2voMP8MH5APoJAm59w4ZQ=="
+        },
+        {
+            "key": "received",
+            "line": "Received: from CO6PR03MB6291.namprd03.prod.outlook.com (2603:10b6:5:35a::23)\r\n by DM6PR03MB5308.namprd03.prod.outlook.com (2603:10b6:5:242::23) with\r\n Microsoft SMTP Server (version=TLS1_2,\r\n cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6111.21; Wed, 22 Feb\r\n 2023 18:51:27 +0000"
+        },
+        {
+            "key": "received",
+            "line": "Received: from CO6PR03MB6291.namprd03.prod.outlook.com\r\n ([fe80::80d9:7427:3762:6cf7]) by CO6PR03MB6291.namprd03.prod.outlook.com\r\n ([fe80::80d9:7427:3762:6cf7%7]) with mapi id 15.20.6134.019; Wed, 22 Feb 2023\r\n 18:51:27 +0000"
+        },
+        {
+            "key": "from",
+            "line": "From: Venu Dharan <Venu@lifesignals.com>"
+        },
+        {
+            "key": "to",
+            "line": "To: \"test@mail.lifesignals.dev\" <test@mail.lifesignals.dev>"
+        },
+        {
+            "key": "subject",
+            "line": "Subject: Re: Test"
+        },
+        {
+            "key": "thread-topic",
+            "line": "Thread-Topic: Test"
+        },
+        {
+            "key": "thread-index",
+            "line": "Thread-Index: AQHZRutOVKfNVKfJzU++i4LZV/rqWa7bSqI3gAACGuaAAALBjg=="
+        },
+        {
+            "key": "date",
+            "line": "Date: Wed, 22 Feb 2023 18:51:27 +0000"
+        },
+        {
+            "key": "message-id",
+            "line": "Message-ID:\r\n <CO6PR03MB629123F83D4629936DBFF5D0D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>"
+        },
+        {
+            "key": "references",
+            "line": "References:\r\n <CO6PR03MB62910C4C0CA95C3055076220D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>\r\n <CO6PR03MB629143B8DDED7DD824A9A0F8D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>\r\n <CO6PR03MB6291AA772ABB5ED18C786F37D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>"
+        },
+        {
+            "key": "in-reply-to",
+            "line": "In-Reply-To:\r\n <CO6PR03MB6291AA772ABB5ED18C786F37D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>"
+        },
+        {
+            "key": "accept-language",
+            "line": "Accept-Language: en-US"
+        },
+        {
+            "key": "content-language",
+            "line": "Content-Language: en-US"
+        },
+        {
+            "key": "x-ms-has-attach",
+            "line": "X-MS-Has-Attach:"
+        },
+        {
+            "key": "x-ms-tnef-correlator",
+            "line": "X-MS-TNEF-Correlator:"
+        },
+        {
+            "key": "msip_labels",
+            "line": "msip_labels:"
+        },
+        {
+            "key": "authentication-results",
+            "line": "authentication-results: dkim=none (message not signed)\r\n header.d=none;dmarc=none action=none header.from=lifesignals.com;"
+        },
+        {
+            "key": "x-ms-publictraffictype",
+            "line": "x-ms-publictraffictype: Email"
+        },
+        {
+            "key": "x-ms-traffictypediagnostic",
+            "line": "x-ms-traffictypediagnostic:\r\n\tCO6PR03MB6291:EE_|DM6PR03MB5308:EE_|SJ0PR03MB5855:EE_"
+        },
+        {
+            "key": "x-ms-office365-filtering-correlation-id",
+            "line": "x-ms-office365-filtering-correlation-id: 29096606-66e7-40d6-0951-08db1505cd9f"
+        },
+        {
+            "key": "x-ms-exchange-senderadcheck",
+            "line": "x-ms-exchange-senderadcheck: 1"
+        },
+        {
+            "key": "x-ms-exchange-antispam-relay",
+            "line": "x-ms-exchange-antispam-relay: 0"
+        },
+        {
+            "key": "x-microsoft-antispam",
+            "line": "x-microsoft-antispam: BCL:0;"
+        },
+        {
+            "key": "x-microsoft-antispam-message-info",
+            "line": "x-microsoft-antispam-message-info:\r\n 6r070gK2xU1oRJ2hah/9a6L+TwLQRZTfxaLEaw+CorTrB5S7mUjQrJBY76DGOOdqChpdDsqPJngf5NepyUZoCr/OkbkJ53QZ25m0l3hp7tjhEweR+Jg2Fyl3ah7jh1Y6fVcNa85/PMKBFhat10QazIXkXOs5bqN1Y2Bltj46K+aUxvnAbd45bMOWURDVXFYliJizV1DsZtFs3Ms1a+EmUAda/9MpHN/jFML7woJ0OV2eYYcyA8Fso9vED13I6geHtgovVKoSTgdQDNa/fybY5E0MSZPbepfVgw5rlEcZ5KS6hRzmoovGgfEuDsIoBySrJYYpz+yuDD/2oJ3QEz/HB6vacUFftVhoFPv5Oegf2bM/UlbxS8FxsfSDqYK7q8IKCQsGXP2j39EB+hQdjys30DMiARZOOltl5dF2CLzZyFxnUbztpqbf5N9TkDy/HM+R3cJz/eInIe2AMkQGApk0RrlDCpyb+yQXFjcRodReZnfjfCa5HsdhtfTEHrklNdHQRsWunMtpRr11jXMwhnTs/Fa0xHTKF71MbCIiyplDYI+fiveWgSlqs2xi6SYqmg4hXK+eireDRHx2ZfrBSKharn5W43cN27hPjZvJ/gZA23ZCWnkK5g3uip5u6+E+sCstmsKshZiCHNLlhEgEJjHCJ1qdzzY4wMlMJ3ZepBgJIsFC0Ct6qKmauHRmqY+wLYh9RtIaOH9mogjLL8qYiM5o7Q=="
+        },
+        {
+            "key": "x-forefront-antispam-report",
+            "line": "x-forefront-antispam-report:\r\n CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO6PR03MB6291.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230025)(39840400004)(376002)(396003)(346002)(366004)(136003)(451199018)(66446008)(186003)(41300700001)(26005)(33656002)(9686003)(316002)(2940100002)(6506007)(86362001)(53546011)(7696005)(478600001)(38070700005)(71200400001)(55016003)(55236004)(8676002)(91956017)(66476007)(6916009)(66946007)(64756008)(76116006)(66556008)(2906002)(122000001)(38100700002)(19627405001)(5660300002)(3480700007)(7116003)(52536014)(8936002)(4744005);DIR:OUT;SFP:1102;"
+        },
+        {
+            "key": "x-ms-exchange-antispam-messagedata-chunkcount",
+            "line": "x-ms-exchange-antispam-messagedata-chunkcount: 1"
+        },
+        {
+            "key": "x-ms-exchange-antispam-messagedata-0",
+            "line": "x-ms-exchange-antispam-messagedata-0:\r\n =?us-ascii?Q?J7JEI2Q4PskGXcy9PK7mLikiOwTIjepvscW2XdDRRpBFDuXcu0RDUwZMwWAe?=\r\n =?us-ascii?Q?2/MjKw58XBcWz9apbozO3yjuqcc3fn+HQH3am/7B26VmT7MUH9TZfHNY4vJf?=\r\n =?us-ascii?Q?kHUmq7pZFu4FLpTcxT0ocKHfzEP39kZDuQwc47otE4LBJCWTfaWH4aaSdgCc?=\r\n =?us-ascii?Q?rjGP7yavDrXd8fEGJFuLYHWPUoZSOiLFSBNXACC0wCDH7yhag4M+HAaJEmO0?=\r\n =?us-ascii?Q?ynwrWZjjLTO6+GsKtGF8YEj3qxC4el+KzA4Rb+2cPLhQ3igv4p+hUm6pwPJy?=\r\n =?us-ascii?Q?2lZ7lsJlNRBq72D/QdE5buCtK9ZciPJiEDTWC2jCyqDSpro0tcsHXEvqRWe1?=\r\n =?us-ascii?Q?5Qt5T3uDMkuCQA/OORZ/Yvhi7be3iV8tOQS/u9/xC/C0qLPq9jbOGwMy52rU?=\r\n =?us-ascii?Q?aTNW0DMUgVWI29jewuC5lj/bn2R3bMjzMTUglBbeEd8yVAyRsbac5Y5SUUxf?=\r\n =?us-ascii?Q?PsdzVM9YVKrjzqyvc2XDB3Rm+pSXS1MrxRQ8OWE0aWjOjDzRtvtHpTmwLhkF?=\r\n =?us-ascii?Q?AMW3NYoVfbJScI83YLAXcPVEOHp2c9jPZnn+q7RJk8h0//ASL/ctQQlnfgqc?=\r\n =?us-ascii?Q?QTwJg5gsvpKgWZRt2OCpLHXCHe8pE66TSfmhbVHz3NpBQLGrH1/ANoTocoRl?=\r\n =?us-ascii?Q?phQLX5VJoszBHb1SsFNub6DUh2R31N0o6ipJY06HJrgRxXhGJZ/W0fcLYaj7?=\r\n =?us-ascii?Q?/IqAp/uBxiHcgvnhVigb8EN1AoDpImRFmf8Zs5zzNRnMFq+f+Ux/lAJ9+Kry?=\r\n =?us-ascii?Q?mgiF6yCMwHOLgnE9b6CsPUhMNZMQFKK7tbXXNl8PHUlQyt45dT0wH5EKf2DR?=\r\n =?us-ascii?Q?NDHoB7TLJGEkAUb6RWkm7rLuNNUbgRlUy/TM7sFgpjCLsPe+54kwMJeuP8xH?=\r\n =?us-ascii?Q?YKgBle9+1SkLQONjWJPKl8xWgNqLu19dweFDLRfv1+ofoB3VFdGCp6LZ2mVg?=\r\n =?us-ascii?Q?uLFjXGtaj/bjkWZANqdjFQHGnnkPbNJW9+KA20kQtzH+1HM8uAMWqEHxRiJe?=\r\n =?us-ascii?Q?5VygV4GqQc1nxGOYEQZ7ZgwuPRGLL3NfzQo7fbxjzRLX3N2V3aXQ35IOrZfw?=\r\n =?us-ascii?Q?uM5i6cjuTdjQzBEluSpBdFqyBIg/YCk+WkwsDyrxQycbAfiKdpw6gdptppES?=\r\n =?us-ascii?Q?6qsh9wKtTUIk91eMie+BWAlT/jOQvJGJ90JMWbyP4tdcMgSAVLKr7w5iZVg+?=\r\n =?us-ascii?Q?fRai+MhiM0Zzdex4JDX74/1Ugj9fclK+X63SpF7FUOYhMvRUmfhQu+EutCiB?=\r\n =?us-ascii?Q?/WqaDUI8WfZsSSMsdYtlydDW5Nk1qik8pj1NBRTKVnBDcf+Jq5NdRUZ+0aNQ?=\r\n =?us-ascii?Q?h8WZxct8SLFf/uaUQ12vnj6ESbVBohCCQ+Ahn0P2dWmKpqftoY+wBPlmyXcV?=\r\n =?us-ascii?Q?Pj82J0yUyRgF+qJXv1Z+KKsgV16KyfbRn4pAT8R7A/8GIgT98cc7QB9h1Ya4?=\r\n =?us-ascii?Q?VIKl43sf3xc7uztRBwle0zkS/V5+AHlRU5Wfn8lGwD3FSTiTROWk3XP6T9UU?=\r\n =?us-ascii?Q?3Da7jcbEMncnXTNIzMNBoHljkeUGPFVIMBAD8yszXCDIpPHyFguazfwPb4iP?=\r\n =?us-ascii?Q?r8WC5shpUN4SIJR/pe7vhU2gtKl/kLalWNYjrns4?="
+        },
+        {
+            "key": "content-type",
+            "line": "Content-Type: multipart/alternative;\r\n\tboundary=\"_000_CO6PR03MB629123F83D4629936DBFF5D0D6AA9CO6PR03MB6291namp_\""
+        },
+        {
+            "key": "mime-version",
+            "line": "MIME-Version: 1.0"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-authas",
+            "line": "X-MS-Exchange-CrossTenant-AuthAs: Internal"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-authsource",
+            "line": "X-MS-Exchange-CrossTenant-AuthSource: CO6PR03MB6291.namprd03.prod.outlook.com"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-network-message-id",
+            "line": "X-MS-Exchange-CrossTenant-Network-Message-Id: 29096606-66e7-40d6-0951-08db1505cd9f"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-originalarrivaltime",
+            "line": "X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Feb 2023 18:51:27.1516\r\n (UTC)"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-fromentityheader",
+            "line": "X-MS-Exchange-CrossTenant-fromentityheader: Hosted"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-id",
+            "line": "X-MS-Exchange-CrossTenant-id: 7b4649d9-428b-40b2-a1c3-a05a5de7b8f6"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-mailboxtype",
+            "line": "X-MS-Exchange-CrossTenant-mailboxtype: HOSTED"
+        },
+        {
+            "key": "x-ms-exchange-crosstenant-userprincipalname",
+            "line": "X-MS-Exchange-CrossTenant-userprincipalname: YpWT1mHoni6onJbepzJQIJbXDvFh+pR7/tTrIZkTp5iB0Won65wI40bo8OuOroMXKOIaka3DgQ4ltC/gpb6pMg=="
+        },
+        {
+            "key": "x-ms-exchange-transport-crosstenantheadersstamped",
+            "line": "X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB5308"
+        },
+        {
+            "key": "return-path",
+            "line": "Return-Path: Venu@lifesignals.com"
+        },
+        {
+            "key": "x-originatororg",
+            "line": "X-OriginatorOrg: lifesignals.com"
+        }
+    ],
+    "html": "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=us-ascii\">\n<style type=\"text/css\" style=\"display:none;\"> P {margin-top:0;margin-bottom:0;} </style>\n</head>\n<body dir=\"ltr\">\n<div style=\"font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\" class=\"elementToProof\">\nasdasdasd</div>\n<div id=\"appendonsend\"></div>\n<hr style=\"display:inline-block;width:98%\" tabindex=\"-1\">\n<div id=\"divRplyFwdMsg\" dir=\"ltr\"><font face=\"Calibri, sans-serif\" style=\"font-size:11pt\" color=\"#000000\"><b>From:</b> Venu Dharan &lt;Venu@lifesignals.com&gt;<br>\n<b>Sent:</b> Thursday, February 23, 2023 12:11 AM<br>\n<b>To:</b> test@mail.lifesignals.dev &lt;test@mail.lifesignals.dev&gt;<br>\n<b>Subject:</b> Re: Test</font>\n<div>&nbsp;</div>\n</div>\n<style type=\"text/css\" style=\"display:none\">\n<!--\np\n\t{margin-top:0;\n\tmargin-bottom:0}\n-->\n</style>\n<div dir=\"ltr\">\n<div class=\"x_elementToProof\" style=\"font-family:Calibri,Arial,Helvetica,sans-serif; font-size:12pt; color:rgb(0,0,0); background-color:rgb(255,255,255)\">\nsdasdasdasd</div>\n<div id=\"x_appendonsend\"></div>\n<hr tabindex=\"-1\" style=\"display:inline-block; width:98%\">\n<div id=\"x_divRplyFwdMsg\" dir=\"ltr\"><font face=\"Calibri, sans-serif\" color=\"#000000\" style=\"font-size:11pt\"><b>From:</b> Venu Dharan &lt;Venu@lifesignals.com&gt;<br>\n<b>Sent:</b> Thursday, February 23, 2023 12:04 AM<br>\n<b>To:</b> test@mail.lifesignals.dev &lt;test@mail.lifesignals.dev&gt;<br>\n<b>Subject:</b> Re: Test</font>\n<div>&nbsp;</div>\n</div>\n<style type=\"text/css\" style=\"display:none\">\n<!--\np\n\t{margin-top:0;\n\tmargin-bottom:0}\n-->\n</style>\n<div dir=\"ltr\">\n<div class=\"x_x_elementToProof\" style=\"font-family:Calibri,Arial,Helvetica,sans-serif; font-size:12pt; color:rgb(0,0,0); background-color:rgb(255,255,255)\">\nasasdasdasd</div>\n<div id=\"x_x_appendonsend\"></div>\n<hr tabindex=\"-1\" style=\"display:inline-block; width:98%\">\n<div id=\"x_x_divRplyFwdMsg\" dir=\"ltr\"><font face=\"Calibri, sans-serif\" color=\"#000000\" style=\"font-size:11pt\"><b>From:</b> Venu Dharan<br>\n<b>Sent:</b> Wednesday, February 22, 2023 11:57 PM<br>\n<b>To:</b> test@mail.lifesignals.dev &lt;test@mail.lifesignals.dev&gt;<br>\n<b>Subject:</b> Test</font>\n<div>&nbsp;</div>\n</div>\n<style type=\"text/css\" style=\"display:none\">\n<!--\np\n\t{margin-top:0;\n\tmargin-bottom:0}\n-->\n</style>\n<div dir=\"ltr\">\n<div class=\"x_x_x_elementToProof\" style=\"font-family:Calibri,Arial,Helvetica,sans-serif; font-size:12pt; color:rgb(0,0,0); background-color:rgb(255,255,255)\">\n<br>\n</div>\n</div>\n</div>\n</div>\n</body>\n</html>\n",
+    "text": "asdasdasd\n________________________________\nFrom: Venu Dharan <Venu@lifesignals.com>\nSent: Thursday, February 23, 2023 12:11 AM\nTo: test@mail.lifesignals.dev <test@mail.lifesignals.dev>\nSubject: Re: Test\n\nsdasdasdasd\n________________________________\nFrom: Venu Dharan <Venu@lifesignals.com>\nSent: Thursday, February 23, 2023 12:04 AM\nTo: test@mail.lifesignals.dev <test@mail.lifesignals.dev>\nSubject: Re: Test\n\nasasdasdasd\n________________________________\nFrom: Venu Dharan\nSent: Wednesday, February 22, 2023 11:57 PM\nTo: test@mail.lifesignals.dev <test@mail.lifesignals.dev>\nSubject: Test\n\n\n",
+    "textAsHtml": "<p>asdasdasd<br/>________________________________<br/>From: Venu Dharan &lt;<a href=\"mailto:Venu@lifesignals.com\">Venu@lifesignals.com</a>&gt;<br/>Sent: Thursday, February 23, 2023 12:11 AM<br/>To: <a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a> &lt;<a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a>&gt;<br/>Subject: Re: Test</p><p>sdasdasdasd<br/>________________________________<br/>From: Venu Dharan &lt;<a href=\"mailto:Venu@lifesignals.com\">Venu@lifesignals.com</a>&gt;<br/>Sent: Thursday, February 23, 2023 12:04 AM<br/>To: <a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a> &lt;<a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a>&gt;<br/>Subject: Re: Test</p><p>asasdasdasd<br/>________________________________<br/>From: Venu Dharan<br/>Sent: Wednesday, February 22, 2023 11:57 PM<br/>To: <a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a> &lt;<a href=\"mailto:test@mail.lifesignals.dev\">test@mail.lifesignals.dev</a>&gt;<br/>Subject: Test</p>",
+    "subject": "Re: Test",
+    "references": [
+        "<CO6PR03MB62910C4C0CA95C3055076220D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>",
+        "<CO6PR03MB629143B8DDED7DD824A9A0F8D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>",
+        "<CO6PR03MB6291AA772ABB5ED18C786F37D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>"
+    ],
+    "date": "2023-02-22T18:51:27.000Z",
+    "to": {
+        "value": [
+            {
+                "address": "test@mail.lifesignals.dev",
+                "name": ""
+            }
+        ],
+        "html": "<span class=\"mp_address_group\"><a href=\"mailto:test@mail.lifesignals.dev\" class=\"mp_address_email\">test@mail.lifesignals.dev</a></span>",
+        "text": "test@mail.lifesignals.dev"
+    },
+    "from": {
+        "value": [
+            {
+                "address": "Venu@lifesignals.com",
+                "name": "Venu Dharan"
+            }
+        ],
+        "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">Venu Dharan</span> &lt;<a href=\"mailto:Venu@lifesignals.com\" class=\"mp_address_email\">Venu@lifesignals.com</a>&gt;</span>",
+        "text": "Venu Dharan <Venu@lifesignals.com>"
+    },
+    "messageId": "<CO6PR03MB629123F83D4629936DBFF5D0D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>",
+    "inReplyTo": "<CO6PR03MB6291AA772ABB5ED18C786F37D6AA9@CO6PR03MB6291.namprd03.prod.outlook.com>"
+}
