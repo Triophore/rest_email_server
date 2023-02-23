@@ -1,0 +1,27 @@
+{
+  "name": "tiny_cypress_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --ignore log/ index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^7.0.0",
+    "@hapi/bell": "^13.0.0",
+    "@hapi/boom": "^10.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/hoek": "^11.0.2",
+    "@hapi/inert": "^6.0.5",
+    "bcrypt": "^5.0.1",
+    "blipp": "^4.0.2",
+    "dotenv": "^16.0.3",
+    "file-stream-rotator": "^0.6.1",
+    "mailparser": "^3.6.3",
+    "smtp-server": "^3.11.0",
+    "uuid": "^8.3.2"
+  }
+}
