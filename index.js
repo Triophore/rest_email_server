@@ -28,7 +28,7 @@ const log = LTS
           parser(stream, {}, (err, parsed) => {
             if (err)
             log("Error:" , err)
-            log(parsed)
+            log(JSON.stringify(parsed))
             stream.on("end", callback)
           })
           
