@@ -4,6 +4,7 @@ var models = {};
 const SMTPServer = require("smtp-server").SMTPServer;
 const parser = require("mailparser").simpleParser
 var MongoClient = require('mongodb').MongoClient;
+const whitelist = require("./whitelist.json")
 
 var rotatingLogStream = require('file-stream-rotator').getStream(
   {
@@ -43,7 +44,23 @@ async function start() {
         size: 1024 * 1024 * 2,
 
       },
-
+      onMailFrom(address, session, callback) {
+        if (whitelist.enable == false) {
+          return callback();
+        } else {
+          var email_address = address.address.split("@");
+          var email_domain = email_address[1];
+          for (var i = 0; i < whitelist.domain.length; i++) {
+            var domain = whitelist.domain[i];
+            if (domain === email_domain) {
+              return callback();
+            }
+          }
+          return callback(
+            new Error("Only whitelisted domains is allowed to send mail")
+          );
+        }
+      },
       onRcptTo(address, session, callback) {
         if (address.address.includes("@lifesignals.dev")) {
           return callback(
