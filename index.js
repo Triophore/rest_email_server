@@ -27,8 +27,6 @@ const log = LTS
 
 async function start() {
   try {
-
-
     const client = await MongoClient.connect(process.env.MONGODB_NATIVE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -57,7 +55,7 @@ async function start() {
             }
           }
           return callback(
-            new Error("Only whitelisted domains is allowed to send mail")
+            new Error("This domain is not allowed to send mail")
           );
         }
       },
@@ -85,6 +83,7 @@ async function start() {
               ...parsed
             }
             var insert = await nativedb.collection("rest_email").insertOne(data);
+            await require("axios").post(process.env.WEBAPI,data)
             log("--------------------")
             log(JSON.stringify(parsed))
             log("--------------------")
