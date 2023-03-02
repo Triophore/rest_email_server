@@ -82,8 +82,17 @@ async function start() {
               createdAt: Date.now(),
               ...parsed
             }
+            
             var insert = await nativedb.collection("rest_email").insertOne(data);
-            await require("axios").post(process.env.WEBAPI,data)
+            var webpacket = {
+              to_name: to_arr[0],
+              to_full: to_arr[1],
+              from_name: from_arr[0],
+              from_full: from_arr[1],
+              createdAt: Date.now(),
+              _id : insert.insertedId
+            }
+            await require("axios").post(process.env.WEBAPI,webpacket)
             log("--------------------")
             log(JSON.stringify(parsed))
             log("--------------------")
