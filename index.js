@@ -36,8 +36,8 @@ async function start() {
     const server = new SMTPServer({
       options: {
         secure: false,
-        name: "lifesignals.dev",
-        banner: "LifeSignals Dev Email Server",
+        name: "<server_name>",
+        banner: "<server name banner>",
         hideSize: true,
         size: 1024 * 1024 * 2,
 
