@@ -99,9 +99,16 @@ async function start() {
             log(JSON.stringify(insert))
             log("--------------------")
           }
-
-          stream.on("end", callback)
         })
+        stream.on('end', () => {
+          let err;
+          if (stream.sizeExceeded) {
+              err = new Error('Error: message exceeds fixed maximum message size 10 MB');
+              err.responseCode = 552;
+              return callback(err);
+          }
+          callback(null, 'Message queued as abcdef'); // accept the message once the stream is ended
+        });
       },
       disabledCommands: ['AUTH']
     });
